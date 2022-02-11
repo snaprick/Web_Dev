@@ -1,0 +1,150 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    background-color: #fafafa;
+}
+section{
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 150;
+}
+.inst-img{
+    margin-right: 30px;
+}
+.content-signin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 350px;
+    height: 382px;
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
+}
+.content-signin input{
+    width: 260px;
+    height: 38px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background: #fafafa;
+    padding: 5px;
+}
+
+.content-signin input:focus{
+    outline: none;
+}
+.content-signin button{
+    background-color: rgba(0, 149, 246,0.3);
+    border: 1px solid rgba(0, 149, 246,0.1);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px;
+    text-align: center;
+    text-transform: inherit;
+    width: 272px;
+    height: 38px;
+}
+.content-signin--or{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content-signin--or hr{
+    width: 104px;
+    margin: 0 5px;
+    border: 0.5px solid #dbdbdb;
+}
+.content-signin--or span{
+    color: #8e8e8e;
+    font-weight: 600;
+    line-height: 15px;
+    margin: 0 10px;
+}
+.content-signin--facebook{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 272px;
+}
+.content-signin--facebook img{
+    margin-right: 10px;
+}
+.content-signin--facebook a{
+    color: #385185;
+    font-size: 15px;
+    font-weight: 600;
+}
+.content-signin>a{
+    color: #00376b;
+    line-height: 16px;
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+.content-reg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 350px;
+    height: 63px;
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
+    margin-top: 10px;
+}
+.content-reg span, .content-reg a {
+    font-size: 14px ;
+    margin-right: 5px;
+}
+.content-reg a{
+    color: #0095f6;
+    font-weight: 500;
+}
+.content p{
+    margin:20px 10px;
+    text-align: center;
+    font-weight: 150;
+}
+.store-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.store-img img{
+    margin-right: 10px;
+}
+
+footer {
+    position:relative;
+    max-width: 650px;
+    margin: 0 auto;
+    padding-top: 20px;
+    font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+    color: #8a8d91;
+}
+
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 10px 0;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 100;
+}
+footer ul li {
+    padding-right: 15px;
+}
+
+footer ul li a {
+    color: #8a8d91;
+}
