@@ -1,17 +1,17 @@
-const addButton = document.querySelector('.add-btn')
-const taskList = document.querySelector('.tasks')
-const newTask = document.querySelector('.new-task')
-const clearAll = document.querySelector('.clear-btn')
+var addButton = document.querySelector('.add-btn')
+var taskList = document.querySelector('.tasks')
+var newTask = document.querySelector('.new-task')
+var clearAll = document.querySelector('.clear-btn')
 
 addButton.addEventListener('click', function () {
-    const addTask = newTask.value.trim();
+    var addTask = newTask.value.trim();
     newTask.value = "";
     if (addTask == "")
         return;
-    const taskText = document.createElement('span');
+    var taskText = document.createElement('span');
     taskText.innerHTML = addTask;
 
-    const checkbox = document.createElement('input');
+    var checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.addEventListener('click', function(){
         if (this.checked)
@@ -20,7 +20,7 @@ addButton.addEventListener('click', function () {
             this.parentNode.className = 'task-item undone';
     });
 
-    const bin = document.createElement('img')
+    var bin = document.createElement('img')
     bin.className = 'bin-img';
     bin.src = 'static/img/bin.png';
     bin.alt = 'Delete task';
@@ -28,7 +28,7 @@ addButton.addEventListener('click', function () {
         this.parentNode.remove();
     });
 
-    const item = document.createElement('div');
+    var item = document.createElement('div');
     item.className = 'task-item'
     item.appendChild(checkbox)
     item.appendChild(taskText);
