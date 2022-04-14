@@ -6,6 +6,9 @@ class Company(models.Model):
     description = models.TextField()
     city = models.CharField(max_length=1000)
     address = models.TextField()
+    class Meta:
+        verbose_name = 'Company'
+        verbose_name_plural = 'Companies'
     def to_json(self):
         return {
             'id': self.id,
@@ -20,6 +23,9 @@ class Vacancy(models.Model):
     description = models.TextField()
     salary = models.FloatField()
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
+    class Meta:
+        verbose_name = 'Vacancy'
+        verbose_name_plural = 'Vacancies'
     def to_json(self):
         return {
             'id': self.id,
