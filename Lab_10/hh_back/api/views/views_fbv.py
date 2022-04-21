@@ -4,7 +4,7 @@ from rest_framework.decorators import api_view
 from django.http.response import JsonResponse
 from rest_framework.response import Response
 from api.models import Company, Vacancy
-from api.serializers import CompanySerializer, CompanySerializer2
+from api.serializers import CompanySerializer, CompanySerializer2, VacancySerializer
 
 
 # Create your views here.
@@ -20,6 +20,13 @@ def companies_list(request):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors)
+
+@api_view(['GET'])
+def top_ten(request):
+    if request.method == 'GET':
+        vacancies = Vacancy.objects.all().order_by('-salary')[:10]
+        serializer = VacancySerializer(vacancies, many = True)
+        return Response(serializer.data)
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
@@ -41,13 +48,13 @@ def company_detail(request, company_id):
         company.delete()
         return Response({'message': 'deleted'}, status=204)
 
-
+@api_view(['GET'])
 def vacancies_list(request):
     vacancies = Vacancy.objects.all()
     vacancies_json = [vacancy.to_json() for vacancy in vacancies]
     return JsonResponse(vacancies_json, safe=False)
 
-
+@api_view(['GET'])
 def vacancy_detail(request, vacancy_id):
     try:
         vacancy = Vacancy.objects.get(id=vacancy_id)

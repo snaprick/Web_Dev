@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Vacancy} from "../models";
+import {Company, Vacancy} from "../models";
 import {CompanyService} from "../company.service";
 import {ActivatedRoute} from "@angular/router";
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-company-details',
@@ -9,19 +10,21 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./company-details.component.css']
 })
 export class CompanyDetailsComponent implements OnInit {
-  vacancies: Vacancy[] = [];
-  constructor(private vacancyService: CompanyService, private route: ActivatedRoute) { }
+  company: Company = {id:1,name:'123',description:'123',address:'123'};
+  constructor(private companyService: CompanyService,private route: ActivatedRoute,private location: Location) { }
   companyIdFromRoute:number = 0;
   ngOnInit(): void {
-    this.getVacancies();
-    console.log(this.companyIdFromRoute)
+    this.getCompany()
   }
-  getVacancies(){
+  getCompany(){
     const routeParams = this.route.snapshot.paramMap;
     this.companyIdFromRoute = Number(routeParams.get('id'));
-    this.vacancyService.getCompanyVacancies(this.companyIdFromRoute).subscribe((data)=>{
-      this.vacancies = data;
+    this.companyService.getCompanyDetail(this.companyIdFromRoute).subscribe((data)=>{
+      this.company = data;
       console.log(data);
     });
+  }
+  goBack(): void {
+    this.location.back();
   }
 }

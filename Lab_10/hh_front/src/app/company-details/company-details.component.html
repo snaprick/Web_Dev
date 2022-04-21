@@ -1,7 +1,12 @@
 <p>company-details works!</p>
-<h1>Vacancies</h1>
+
 <ul>
-  <li *ngFor ="let v of vacancies">
-    <p>id:{{v.id}}, name: {{v.name}}, description: {{v.description}},company_id:{{v.company_id}}</p>
+  <li>
+    <p><a [routerLink]="['/companies/'+company.id+'/vacancies']">id</a>:{{company.id}}, name: {{company.name}}</p>
+    <p>description : {{company.description}}</p>
   </li>
 </ul>
+
+<div>
+  <button (click)="goBack()">Go Back</button>
+</div>

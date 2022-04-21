@@ -4,12 +4,15 @@
   <input type="text" [(ngModel)]="password">
   <button (click)="login()">Login</button>
 </div>
-<div>
-  <a [routerLink]="['companies']"> Companies </a>
+<div id = "buttons">
+  <div class = "links">
+    <a [routerLink]="['companies']"> Companies </a>
+  </div>
+  <div class = "links">
+    <a [routerLink]="['vacancies']"> Vacancies </a>
+  </div>
 </div>
-<div>
-  <a [routerLink]="['vacancies']"> Vacancies </a>
-</div>
+
 <div *ngIf = "logged">
   <router-outlet></router-outlet>
   <button (click)="logout()">Logout</button>

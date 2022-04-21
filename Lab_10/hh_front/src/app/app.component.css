@@ -1,0 +1,19 @@
+a {
+  text-decoration: none;
+}
+.links {
+  color: black;
+  background-color: gray;
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  padding-top: 15px;
+  margin: 10px 10px;
+  font-size: 30px;
+  border: 2px solid gray;
+  border-radius: 8px;
+}
+#buttons {
+  display: inline-flex;
+
+}

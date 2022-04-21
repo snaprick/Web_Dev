@@ -1,0 +1,11 @@
+<p>company-vacancies works!</p>
+<h1>Vacancies</h1>
+<ul>
+  <li *ngFor ="let v of vacancies">
+    <p>id:{{v.id}}, name: {{v.name}}, description: {{v.description}},company_id:{{v.company_id}}</p>
+  </li>
+</ul>
+
+<div>
+  <button (click)="goBack()">Go Back</button>
+</div>

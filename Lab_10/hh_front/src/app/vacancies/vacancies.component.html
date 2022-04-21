@@ -1,7 +1,9 @@
 <p>vacancies works!</p>
 <h1>Vacancies</h1>
+<a [routerLink]="['/vacancies/top_ten']"><h2>Top Ten Vacancies</h2></a>
 <ul>
   <li *ngFor ="let v of vacancies">
-    <p>id:{{v.id}}, name: {{v.name}}, description: {{v.description}},company_id:{{v.company_id}}</p>
+    <a [routerLink]="['/vacancies/'+v.id]"><p>id:{{v.id}}, name: {{v.name}}, description: {{v.description}},salary: {{v.salary}},company_id:{{v.company_id}}</p>
+    </a>
   </li>
 </ul>

@@ -1,0 +1,14 @@
+<p>top-ten works!</p>
+<h1>Top Vacancies</h1>
+<ul>
+
+  <li *ngFor ="let v of vacancies">
+    <a [routerLink]="['/vacancies/'+v.id]">
+    <p>id:{{v.id}}, name: {{v.name}}</p>
+    </a>
+  </li>
+
+</ul>
+<div>
+  <button (click)="goBack()">Go Back</button>
+</div>
